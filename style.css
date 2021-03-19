@@ -1,9 +1,14 @@
+/* in this part we have restore the browser effects */
+/* we have set margin and padding prop for all
+   headings paragraphs images etc to be 0 */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* this is the main part in this part we have described the 
+   initial body conditions! and the display of the body */
 body{
     display: flex;
     justify-content: center;
@@ -11,6 +16,7 @@ body{
     background-color: #000;
 }
 
+/* this is the part where we have the image inside it.  */
 .main_box{
     margin-top: 15em;
     margin-left: 15em;
@@ -20,6 +26,21 @@ body{
     animation: move infinite 0.5s alternate ease-in-out;
 }
 
+/* pseudo-class
+    ::after 
+    ::before
+   these are used to add on the conent without using them in HTML.
+
+   using the before and after property of the pseudo-class
+
+   we have added a dot and the pin which hangs the image
+*/
+
+/* using ::before pseudo-class
+    we have added a dot with a 
+    bg-color --> green
+    body-color --> yellow
+*/
 .main_box::before{
     content: '';
     width: 0.75em;
@@ -34,6 +55,17 @@ body{
     
 }
 
+
+/* 
+    using ::after pseudo-class
+    we have added a pin which holds the image.
+*/
+
+
+/* a Z-INDEX of -2 is set to keep the object of 
+    ::after pseudo-class to beneath of all of the other 
+    objects
+*/
 .main_box::after{
     content: '';
     position: absolute;
@@ -48,6 +80,10 @@ body{
     position:fixed;
 }
 
+
+/* 
+    @keyframes is used to add the animation in our code!
+*/
 
 @keyframes move{
     from{
